@@ -33,4 +33,10 @@ public class HelloController {
                     .body("An error occurred while processing your request. Please try again later.");
         }
     }
+
+    @GetMapping("/")
+    public ResponseEntity<String> redirectToHello() {
+        logger.info("Default endpoint accessed, redirecting to /hello");
+        return sayHello(); // Reuse the logic of sayHello()
+    }
 }
